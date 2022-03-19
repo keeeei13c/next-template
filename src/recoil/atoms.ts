@@ -1,11 +1,22 @@
 import { atom } from "recoil";
+import type { Todo } from "src/types";
 
-export const textState = atom({
-  key: "textState", 
-  default: "test", 
+export const todoTitleFormValueState = atom<string>({
+  key: "textState",
+  default: "",
 });
 
-export const todoListState = atom({
+export const searchTextFormState = atom<string>({
+  key: "searchTextForm",
+  default: "",
+});
+
+export const todoListState = atom<Todo[]>({
   key: "TodoList",
-  default: [],
+  default: [
+    { title: "one" },
+    { title: "two" },
+    { title: "three" },
+  ],
 });
+
